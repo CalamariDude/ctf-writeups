@@ -3,16 +3,27 @@
 Challenge consists of a challenge file and an output file
 Output file includes [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) values c (cipher text), n (modulus), and e (exponent)
 In order to decrypt a file encrypted with an RSA encryption, according to wikipedia, one must solve the following equation:
+  
 `(c^d)modn`
-`n` and `c` are given but we don't know `d`
-`d` can be found by solving this equation:
-`de=1mod(lambda(n))`
-`e` is known, lambda(n) is not.
-we can find this value by using an online [euler's totient](https://en.wikipedia.org/wiki/Euler%27s_totient_function) calculator.
-I used this one : https://comnuan.com/cmnn02/cmnn02005/
-I didn't have the time to figure out how to calculate this without these calculators.
+  
+`n` and `c` are given but we don't know `d`  
 
-After we have this number, we can plug it into the equation and solve. I coded a fast solution below.
+`d` can be found by solving this equation:  
+  
+`de=1mod(lambda(n))`
+  
+`e` is known, lambda(n) is not.
+  
+we can find this value by using an online [euler's totient](https://en.wikipedia.org/wiki/Euler%27s_totient_function) calculator.
+  
+I used this one : https://comnuan.com/cmnn02/cmnn02005/
+  
+  
+I didn't have the time to figure out how to calculate this without these calculators.
+  
+
+After we have this number, we can plug it into the equation and solve. I coded a fast solution below. 
+  
 
 		from Crypto.Util.number import long_to_bytes
 	
